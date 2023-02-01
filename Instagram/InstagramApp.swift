@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-//import Firebase
-
 import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -19,21 +17,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
   }
 }
 
-
 @main
 struct InstagramApp: App {
     
-//    init() {
-//        FirebaseApp.configure()
-//    }
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
     
     var body: some Scene {
         WindowGroup {
-           // MainTabView()
-            LoginView()
+            ContentView().environmentObject(AuthViewModel.shared)
         }
     }
 }

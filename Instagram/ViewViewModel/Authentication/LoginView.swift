@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Foundation
+import Firebase
 
 struct LoginView: View {
     let fontCustom = Font.custom("vinyl_bold", size: 25)
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -27,10 +30,12 @@ struct LoginView: View {
                         CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
                             .padding()
                             .background(Color(.init(white: 1, alpha: 0.15)))
+                            .foregroundColor(.white)
                             .cornerRadius(10)
                         CustomPasswordField(text: $password, placeholder: Text("Password"))
                             .padding()
                             .background(Color(.init(white: 1, alpha: 0.15)))
+                            .foregroundColor(.white)
                             .cornerRadius(10)
                     }.padding(.horizontal, 32)
                     
@@ -46,7 +51,7 @@ struct LoginView: View {
                     }
                     
                     Button(action: {
-                        
+                        viewModel.login(withEmail: email, password: password)
                     }, label: {
                         Text("Sign In").font(.headline)
                             .foregroundColor(.white)
