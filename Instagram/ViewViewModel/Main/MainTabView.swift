@@ -23,14 +23,26 @@ struct MainTabView: View {
                 NotificationView() .tabItem {
                     Image(systemName: "heart")
                 }
-                ProfileView() .tabItem {
-                    Image(systemName: "person")
-                }
-            }.accentColor(.black)
-                .navigationTitle("Home")
-                .navigationBarTitleDisplayMode(.inline)
-                .accentColor(.black)
+//                ProfileView() .tabItem {
+//                    Image(systemName: "person")
+//                }
+            }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(leading: logOutButton)
+            .accentColor(.black)
         }
+    }
+    
+    var logOutButton: some View {
+        Button(action: {
+            AuthViewModel.shared.signOut()
+        }, label: {
+            Text("Logout").foregroundColor(.black)
+                .font(.system(size: 16, weight: .semibold))
+//            Image(systemName: "arrow.left")
+//                .font(Font.title.weight(.medium))
+        })
     }
 }
 
