@@ -9,13 +9,20 @@ import SwiftUI
 
 struct ProfileView: View {
     let user: User
+    @ObservedObject var viewModel: ProfileViewModel
+    
+    init(user: User) {
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+    }
     
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView(user: user).padding(.bottom, 16)
+                ProfileHeaderView(viewModel: viewModel)
+                    .padding(.bottom, 16)
                 PostGridView()
-            }
+            }.padding(.top)
         }
     }
 }
