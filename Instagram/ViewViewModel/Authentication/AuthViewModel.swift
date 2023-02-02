@@ -12,6 +12,7 @@ import FirebaseCore
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     static let shared = AuthViewModel()
     
@@ -30,7 +31,7 @@ class AuthViewModel: ObservableObject {
             guard let user = result?.user else { return }
             print("Successfully loged in user")
             self.userSession = user
-            
+            self.fetchUser()
         }
     }
     
@@ -38,7 +39,7 @@ class AuthViewModel: ObservableObject {
         
         guard let image = image else { return }
         
-        ImageUploader.uploadImage(image: image) { imageUrl in
+        ImageUploader.uploadImage(image: image, type: .profile) { imageUrl in
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -56,6 +57,7 @@ class AuthViewModel: ObservableObject {
                 COLLECTION_USERS.document(user.uid).setData(data) { _ in
                     print("Successfully uploaded user data")
                     self.userSession = user
+                    self.fetchUser()
                 }
             }
         }
@@ -75,6 +77,7 @@ class AuthViewModel: ObservableObject {
         COLLECTION_USERS.document(uid).getDocument { snapshot, _ in
             guard let user = try? snapshot?.data(as: User.self) else { return }
             print("User information: \(user)")
+            self.currentUser = user
         }
     }
 }
