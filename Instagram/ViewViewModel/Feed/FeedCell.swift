@@ -11,6 +11,7 @@ import Kingfisher
 struct FeedCell: View {
     @ObservedObject var viewModel: FeedCellViewModel
     
+    //computed property = that calculates and returns a value, rather than just store it
     var didLike: Bool { return viewModel.post.didLike ?? false }
     
     init(viewModel: FeedCellViewModel) {
@@ -46,18 +47,23 @@ struct FeedCell: View {
                 Button(action: {
                     didLike ? viewModel.unlike() : viewModel.like()
                 }, label: {
-                    Image(systemName: "heart")
+                    Image(systemName: didLike ? "heart.fill" : "heart")
                         .resizable()
+                        .foregroundColor(didLike ? .red : .black)
                         .frame(width: 25, height: 25)
                         .font(.system(size: 20))
                 })
                 Button(action: {
                     
                 }, label: {
-                    Image(systemName: "bubble.right")
-                        .resizable()
-                        .frame(width: 25, height: 25)
-                        .font(.system(size: 20))
+                   NavigationLink(destination: {
+                       CommentsView(post: viewModel.post)
+                   }, label: {
+                       Image(systemName: "bubble.right")
+                           .resizable()
+                           .frame(width: 25, height: 25)
+                           .font(.system(size: 20))
+                   })
                 })
                 Button(action: {
                     
@@ -69,7 +75,7 @@ struct FeedCell: View {
                 })
             }.padding(8)
                 .foregroundColor(.black)
-            Text("\(viewModel.post.likes) likes").font(.system(size: 15, weight: .semibold))
+            Text(viewModel.likeString).font(.system(size: 15, weight: .semibold))
                 .padding([.bottom,.leading], 8)
             HStack {
                 Text(viewModel.post.ownerUsername).font(.system(size: 15, weight: .semibold)) +

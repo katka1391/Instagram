@@ -64,6 +64,11 @@
 		B9840803298D271800BFA14E /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9840802298D271800BFA14E /* FeedViewModel.swift */; };
 		B9F98688299144CE0024D940 /* PostGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F98687299144CE0024D940 /* PostGridViewModel.swift */; };
 		B9F9868A299268F20024D940 /* FeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F98689299268F20024D940 /* FeedCellViewModel.swift */; };
+		B9F9868C299289CA0024D940 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9868B299289CA0024D940 /* Comments.swift */; };
+		B9F9868E299289E80024D940 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9868D299289E80024D940 /* CommentsView.swift */; };
+		B9F98690299289F60024D940 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9868F299289F60024D940 /* CommentsCell.swift */; };
+		B9F9869229928A070024D940 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F9869129928A070024D940 /* CommentsViewModel.swift */; };
+		B9F98694299296CA0024D940 /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F98693299296CA0024D940 /* CustomInputView.swift */; };
 		B9FDCD312982CC1900002DD0 /* InstagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FDCD302982CC1900002DD0 /* InstagramApp.swift */; };
 		B9FDCD352982CC1A00002DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9FDCD342982CC1A00002DD0 /* Assets.xcassets */; };
 		B9FDCD382982CC1A00002DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9FDCD372982CC1A00002DD0 /* Preview Assets.xcassets */; };
@@ -129,6 +134,11 @@
 		B9840802298D271800BFA14E /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		B9F98687299144CE0024D940 /* PostGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridViewModel.swift; sourceTree = "<group>"; };
 		B9F98689299268F20024D940 /* FeedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellViewModel.swift; sourceTree = "<group>"; };
+		B9F9868B299289CA0024D940 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		B9F9868D299289E80024D940 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		B9F9868F299289F60024D940 /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		B9F9869129928A070024D940 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		B9F98693299296CA0024D940 /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
 		B9FDCD2D2982CC1900002DD0 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FDCD302982CC1900002DD0 /* InstagramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramApp.swift; sourceTree = "<group>"; };
 		B9FDCD342982CC1A00002DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -292,6 +302,7 @@
 			children = (
 				B9382F60298AA2CA00909C99 /* User.swift */,
 				B9840800298D25B600BFA14E /* Post.swift */,
+				B9F9868B299289CA0024D940 /* Comments.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +351,10 @@
 		B9FDCD622982CC9900002DD0 /* Comments */ = {
 			isa = PBXGroup;
 			children = (
+				B9F9868D299289E80024D940 /* CommentsView.swift */,
+				B9F9868F299289F60024D940 /* CommentsCell.swift */,
+				B9F9869129928A070024D940 /* CommentsViewModel.swift */,
+				B9F98693299296CA0024D940 /* CustomInputView.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -538,15 +553,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9840803298D271800BFA14E /* FeedViewModel.swift in Sources */,
+				B9F9868C299289CA0024D940 /* Comments.swift in Sources */,
 				B9FDCD722982CEFE00002DD0 /* FeedView.swift in Sources */,
 				B9382F172987E7A400909C99 /* UserCell.swift in Sources */,
 				B9FDCD6C2982CD3C00002DD0 /* SearchView.swift in Sources */,
+				B9F9869229928A070024D940 /* CommentsViewModel.swift in Sources */,
 				B9382F272989204D00909C99 /* RegistrationView.swift in Sources */,
 				B9382F3B298934A800909C99 /* CustomTextField.swift in Sources */,
 				B9382F59298A6B7F00909C99 /* ImageUploader.swift in Sources */,
 				B9382F212988197200909C99 /* ProfileActionButton.swift in Sources */,
 				B9382F3F298934C100909C99 /* CustomPasswordField.swift in Sources */,
 				B9382F132987E5DF00909C99 /* PostGridView.swift in Sources */,
+				B9F98690299289F60024D940 /* CommentsCell.swift in Sources */,
 				B9F98688299144CE0024D940 /* PostGridViewModel.swift in Sources */,
 				B9FDCD682982CD0800002DD0 /* ContentView.swift in Sources */,
 				B9382F292989205C00909C99 /* ResetPasswordView.swift in Sources */,
@@ -554,11 +572,13 @@
 				B9FDCD6A2982CD2200002DD0 /* ProfileView.swift in Sources */,
 				B98407FF298C1EA400BFA14E /* TextArea.swift in Sources */,
 				B9382F232989124F00909C99 /* ImagePicker.swift in Sources */,
+				B9F98694299296CA0024D940 /* CustomInputView.swift in Sources */,
 				B98407FB298BD6BB00BFA14E /* UserService.swift in Sources */,
 				B9382F192987ED8D00909C99 /* Extentions.swift in Sources */,
 				B9382F1D2988065000909C99 /* ProfileHeaderView.swift in Sources */,
 				B9FDCD312982CC1900002DD0 /* InstagramApp.swift in Sources */,
 				B9382F1F2988118800909C99 /* UserStatView.swift in Sources */,
+				B9F9868E299289E80024D940 /* CommentsView.swift in Sources */,
 				B9FDCD742982CF4300002DD0 /* UploadPostView.swift in Sources */,
 				B9F9868A299268F20024D940 /* FeedCellViewModel.swift in Sources */,
 				B9840801298D25B600BFA14E /* Post.swift in Sources */,
