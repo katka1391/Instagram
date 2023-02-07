@@ -10,9 +10,11 @@ import SwiftUI
 
 class SearchViewModel: ObservableObject {
     @Published var users = [User]()
+//@Published var posts = [Post]()
     
     init() {
         fetchUsers()
+     //   fetchPosts()
     }
     
     func fetchUsers() {
@@ -24,6 +26,19 @@ class SearchViewModel: ObservableObject {
             }
         }
     }
+    
+//    func fetchPosts() {
+//        COLLECTION_POSTS.getDocuments { (snapshot, error) in
+//            if let error = error {
+//                print("DEBUG: Error fetching posts \(error.localizedDescription)")
+//            } else {
+//                guard let documents = snapshot?.documents else { return }
+//                self.posts = documents.compactMap({ try? $0.data(as: Post.self) })
+//                
+//                print("fetchinch post: \(self.posts)")
+//            }
+//        }
+//    }
     
     func filteredUsers(_ query: String) -> [User] {
         let lowercasedQuery = query.lowercased()

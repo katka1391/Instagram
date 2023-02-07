@@ -21,8 +21,8 @@ class UploadPostViewModel: ObservableObject {
                         "ownerUid" : user.id ?? "",
                         "ownerImageUrl": user.profileImageUrl,
                         "ownerUsername" : user.username] as [String : Any]
-           COLLECTION_POSTS
-                .addDocument(data: data, completion: completion) 
+            
+        COLLECTION_POSTS.addDocument(data: data, completion: completion) 
         }
     }
 }

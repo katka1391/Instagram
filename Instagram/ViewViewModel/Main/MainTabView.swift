@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 struct MainTabView: View {
-    let user: User
     @Binding var selectedIndex: Int
+    var user: User
+   
     
     var body: some View {
         NavigationView {
