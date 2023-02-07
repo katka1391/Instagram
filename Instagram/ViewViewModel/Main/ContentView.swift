@@ -17,7 +17,7 @@ struct ContentView: View {
                 LoginView()
             } else {
                 if let user = viewModel.currentUser {
-                    MainTabView(user: user, selectedIndex: $selectedIndex)
+                    MainTabView(selectedIndex: $selectedIndex, user: user)
                 }
             }
         }

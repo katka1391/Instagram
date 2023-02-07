@@ -37,13 +37,29 @@ struct UploadPostView: View {
                 })
             } else if let image = postImage {
                 HStack(alignment: .top) {
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 96, height: 96)
-                        .clipped()
+                    VStack (spacing: 16) {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 96, height: 96)
+                            .clipped()
+                        
+                        Button(action: {
+                            captionText = ""
+                            postImage = nil
+                        }, label: {
+                            HStack (spacing: 8) {
+                                Image(systemName: "arrow.left")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 15)
+                                Text("Back")
+                                    .font(.system(size: 15, weight: .semibold))
+                            }
+                        })
+                    }
                    
-                     TextArea(text: $captionText, placeholder: "Enter your caption..")
+                    TextArea(text: $captionText, placeholder: "Enter your caption..")
                         .frame(height: 200)
                 }.padding()
                 
@@ -61,7 +77,7 @@ struct UploadPostView: View {
                         .background(Color.blue)
                         .cornerRadius(5)
                         .foregroundColor(.white)
-                }).padding(.top, 96)
+                }).padding(.top, 32)
                 Spacer()
             }
         }
