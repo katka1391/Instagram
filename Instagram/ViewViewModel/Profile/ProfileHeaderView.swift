@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
+//import Kingfisher
 
 struct ProfileHeaderView: View {
     @ObservedObject var viewModel: ProfileViewModel
@@ -14,12 +14,12 @@ struct ProfileHeaderView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                KFImage(URL(string: viewModel.user.profileImageUrl))
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
-                    .padding(.leading, 16)
+//                KFImage(URL(string: viewModel.user.profileImageUrl))
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(width: 80, height: 80)
+//                    .clipShape(Circle())
+//                    .padding(.leading, 16)
                 Spacer()
                 HStack (spacing: 8) {
                     UserStatView(value: 1, title: "Post")

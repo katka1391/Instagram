@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
+//import Kingfisher
 
 
 struct UserCell: View {
@@ -14,11 +14,11 @@ struct UserCell: View {
     
     var body: some View {
         HStack {
-            KFImage(URL(string: user.profileImageUrl))
-                .resizable()
-                .scaledToFill()
-                .frame(width: 48, height: 48)
-                .clipShape(Circle())
+//            KFImage(URL(string: user.profileImageUrl))
+//                .resizable()
+//                .scaledToFill()
+//                .frame(width: 48, height: 48)
+//                .clipShape(Circle())
             VStack (alignment: .leading) {
                 Text(user.username)
                     .font(.system(size: 15, weight: .semibold))

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
+//import Kingfisher
 
 struct FeedCell: View {
     @ObservedObject var viewModel: FeedCellViewModel
@@ -21,12 +21,12 @@ struct FeedCell: View {
     var body: some View {        
         VStack(alignment: .leading) {
             HStack {
-                KFImage(URL(string: viewModel.post.ownerImageUrl))
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 36)
-                    .clipShape(Circle())
-                    .cornerRadius(18)
+//                KFImage(URL(string: viewModel.post.ownerImageUrl))
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 36)
+//                    .clipShape(Circle())
+//                    .cornerRadius(18)
 
                 Button(action: {
                     
@@ -37,11 +37,11 @@ struct FeedCell: View {
                 Spacer()
             }.padding(8)
             
-            KFImage(URL(string: viewModel.post.imageUrl))
-                .resizable()
-                .scaledToFill()
-                .frame(maxHeight: 440)
-                .clipped()
+//            KFImage(URL(string: viewModel.post.imageUrl))
+//                .resizable()
+//                .scaledToFill()
+//                .frame(maxHeight: 440)
+//                .clipped()
             
             HStack (spacing: 16) {
                 Button(action: {
